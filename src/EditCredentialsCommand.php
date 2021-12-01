@@ -43,6 +43,8 @@ class EditCredentialsCommand extends Command
 
         $process = new Process([$editor, $meta['uri']]);
 
+        $process->setTimeout(null);
+        $process->setIdleTimeout(null);
         $process->setTty(true);
         $process->mustRun();
 
